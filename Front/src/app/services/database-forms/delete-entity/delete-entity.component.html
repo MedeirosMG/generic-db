@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Delete Entity</h1>
+
+<div mat-dialog-content>
+
+    <mat-form-field>
+        <mat-label>Table</mat-label>
+        <mat-select (selectionChange)="selectTable($event)">
+            <mat-option *ngFor="let table of tables" [value]="table.id">
+                {{table.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-selection-list #entitiesSelected color="primary" *ngIf="tableSelected">
+        <mat-list-option *ngFor="let entitie of tableSelected.entities" [value]="entitie">
+            <span class="stick">
+                {{parseModelText(entitie)}}
+            </span>
+        </mat-list-option>
+    </mat-selection-list>
+
+
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-button (click)="delete()">Delete</button>
+</div>

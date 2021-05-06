@@ -1,0 +1,16 @@
+.loader {
+    width: 120px;
+    background-color: transparent;
+    height: 120px;
+      position: fixed;
+      top:100px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 99999999;
+  }
+
+  body{
+      opacity: 0.4;
+  }

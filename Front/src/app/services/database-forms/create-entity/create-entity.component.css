@@ -1,0 +1,32 @@
+.mat-form-field:not(:first-child){
+    margin-left: 10px;
+}
+
+.mat-card:not(:first-child){
+    margin-top: .5em;
+}
+
+.mat-dialog-content{
+    padding: 10px
+}
+
+.mat-card-title{
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+.mat-dialog-content{
+    padding: 25px;
+}
+
+.w-100{
+    width: 100%;
+}
+
+::ng-deep .mat-figure{
+    align-items: initial !important;
+}
+
+.ng-star-inserted{
+    padding: 10px;
+}

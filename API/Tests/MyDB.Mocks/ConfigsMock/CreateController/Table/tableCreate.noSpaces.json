@@ -1,0 +1,21 @@
+[
+  {
+    "databaseKey": "2e04ca2d-1762-4675-9850-01480d843f48",
+    "attributes": [
+      {
+        "primaryKey": true,
+        "name": "Id",
+        "type": "scalar"
+      },
+      {
+        "name": "Name",
+        "type": "string"
+      },
+      {
+        "name": "Cpf",
+        "type": "string"
+      }
+    ],
+    "tableName": "TableWithNoSpaces"
+  }
+]

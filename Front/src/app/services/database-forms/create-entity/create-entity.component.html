@@ -1,0 +1,94 @@
+<h1 mat-dialog-title>
+    Create Entity
+</h1>
+
+<div mat-dialog-content>
+
+    <mat-form-field>
+        <mat-label>Table</mat-label>
+        <mat-select (selectionChange)="selectTable($event)">
+            <mat-option *ngFor="let table of tables" [value]="table.id">
+                {{table.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngFor="let item of getPk(); let i = index">
+        <mat-label>{{item.name}}</mat-label>
+        <input [(ngModel)]="item.value" disabled matInput>
+    </mat-form-field>
+
+    <mat-card *ngIf="getOthersAttributes(true).length >0 || getOthersAttributes(false).length >0"
+        class="mat-elevation-z2">
+        <mat-card-title>Fields</mat-card-title>
+        <mat-card-content>
+            <mat-form-field *ngFor="let item of getOthersAttributes(false); let i = index" class="formFields"
+                appearance="fill">
+                <mat-label>{{item.name}}</mat-label>
+                <input type="{{item.type}}" [(ngModel)]="item.value" matInput>
+            </mat-form-field>
+
+            <mat-divider class="fields-divider"></mat-divider>
+
+            <section>
+                <mat-checkbox *ngFor="let item of getOthersAttributes(true); let i = index" color="primary" [(ngModel)]="item.value">{{item.name}}</mat-checkbox>
+            </section>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="getReferences().length >0 " class="mat-elevation-z2">
+        <mat-card-title>References</mat-card-title>
+        <mat-card-content>
+
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile *ngFor="let item of getReferences(); let i = index">
+                    <mat-card class="w-100">
+                        <mat-card-title>{{item.name}}</mat-card-title>
+                        <mat-card-content>
+
+                            <div>
+                                <mat-form-field class="w-100">
+                                    <mat-label>Table Reference</mat-label>
+                                    <mat-select (selectionChange)="selectTableReference($event, item)">
+                                        <mat-option *ngFor="let tableReference of getTablesForReferences()" [value]="tableReference.id">
+                                            {{tableReference.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <mat-form-field class="w-100">
+                                    <mat-label>Attribute Reference</mat-label>
+                                    <mat-select [disabled]="getAttributeReference(item).length == 0"
+                                        (selectionChange)="selectAttributeReference($event, item)">
+                                        <mat-option *ngFor="let attribute of getAttributeReference(item)"
+                                            [value]="attribute.name">
+                                            {{attribute.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <mat-form-field class="w-100">
+                                    <mat-label>Id Attribute</mat-label>
+                                    <input [disabled]="!checkReferencesForm(item)"
+                                        (input)="entityReference($event.target.value, item)" matInput>
+                                </mat-form-field>
+                            </div>
+
+                        </mat-card-content>
+                    </mat-card>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+
+</div>
+<div mat-dialog-actions align="end">
+    <button (click)="close()" mat-button>Cancel</button>
+    <button (click)="addEntity()" [disabled]="!entityForm" mat-button>Create</button>
+</div>

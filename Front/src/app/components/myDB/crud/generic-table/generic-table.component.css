@@ -1,0 +1,39 @@
+    .mat-elevation-z1{
+    overflow-x: auto;
+    width: 100%;
+    right: 0;
+  }
+  
+  .mat-header-cell{
+    font-size: 15px;
+  }
+  
+  .mat-expansion-panel{
+    background-color: #7e57c2;
+  }
+  
+  .mat-expansion-panel-header-title{
+    color: #FFFFFF;
+    font-size: 20px;
+  }
+  
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0 0 0 0 !important;
+    overflow-x: auto;
+  }
+  
+  .mat-accordion:not(:last-child) .mat-expansion-panel{
+    margin-bottom: 10px;
+  }
+  
+  .link{
+    background-color:#8a8a8a;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    color: #FFFFFF;
+  }
+
+  .mat-icon{
+    padding-right: 5px;
+    vertical-align: middle;
+  }

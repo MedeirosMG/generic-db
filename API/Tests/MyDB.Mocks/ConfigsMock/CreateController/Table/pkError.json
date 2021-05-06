@@ -1,0 +1,12 @@
+[
+  {
+    "databaseKey": "2e04ca2d-1762-4675-9850-01480d843f48",
+    "attributes": [
+      {
+        "primaryKey": false,
+        "name": "teste"
+      }
+    ],
+    "tableName": "Table Teste"
+  }
+]

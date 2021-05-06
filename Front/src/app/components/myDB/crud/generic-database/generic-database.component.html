@@ -1,0 +1,23 @@
+<mat-card-content class="mat-elevation-z7">
+  <mat-card>
+    <mat-card-title class="header-database">
+      {{database.name}}
+      <mat-icon (click)="deleteDb()">delete_outline</mat-icon>
+    </mat-card-title>
+
+    <mat-card-content class="mat-elevation-z1 buttonsArea">
+      <!-- Add button new table -->
+      <div class="example-button-container">
+        <button mat-stroked-button color="primary" class="buttons" (click)="addTable()">Create Table</button>
+        <button mat-stroked-button color="primary" class="buttons" (click)="addEntity()">Add Entity</button>
+        <button mat-stroked-button color="primary" class="buttons" (click)="generateDump()">Dump</button>
+        <button mat-stroked-button color="primary" class="buttons" (click)="deleteTable()">Delete Table</button>
+        <button mat-stroked-button color="primary" class="buttons" (click)="deleteEntity()">Delete Entity</button>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content class="mat-elevation-z1">
+      <app-generic-table [tables]="tables"></app-generic-table>
+    </mat-card-content>
+  </mat-card>
+</mat-card-content>

@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyDB Doc</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="Docs/Lib/scribbler-global.css">
+  <link rel="stylesheet" href="Docs/Lib/scribbler-doc.css">
+  <link rel="author" href="humans.txt">
+</head>
+
+<body>
+  <div class="doc__bg"></div>
+  <nav class="header">
+    <h1 class="logo">MyDB <span class="logo__thin">Doc</span></h1>
+  </nav>
+  <div class="wrapper">
+    <aside class="doc__nav">
+      <ul>
+        <li class="js-btn selected">Get Started</li>
+        <li class="js-btn">Windows Configuration</li>
+        <li class="js-btn">Linux/Mac Configuration</li>
+        <li class="js-btn">Tests</li>
+        <li class="js-btn">Angular Services</li>
+        <li class="js-btn">APIs Endpoints</li>
+        <li class="js-btn">Functionalities</li>
+        <li class="js-btn">Create Functionalities</li>
+        <li class="js-btn">Dump Functionalities</li>
+        <li class="js-btn">Delete Functionalities</li>
+      </ul>
+    </aside>
+    <article class="doc__content">
+      <section class="js-section">
+        <h3 class="section__title">Get Started</h3>
+        <p>MyDB system provide a simple way to manage your data. Databases, tables and entities are easy to manage with
+          this system.</p>
+
+        Important
+        <p>- All Projects need to be running to use MyDB</p>
+        <p>- Swagger URL: <a class="link link--light" href="https://localhost:5001/swagger/index.html">Link</a></p>
+        <p>- Application URL: <a class="link link--light" href="http://localhost:4200/">Link</a></p>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Windows Configuration</h3>
+        <div class="code__block code__block--notabs">
+          <p>MyDB instructions build&run for windows: </p>
+
+          Backend:
+          <pre class="code code--block">
+              <code>
+                1. Install <a class="link link--light" href="https://dotnet.microsoft.com/download/dotnet/thankyou/sdk-3.1.408-windows-x64-installer">.Net Core 3.1 SDK</a>
+                2. Trust on .net certs, CMD command: <b>dotnet dev-certs https –trust</b>
+                3. Into %your_folder%/myDB/API run the project, CMD command: <b>dotnet run --project Presentation/MyDB.csproj</b>
+              </code>
+            </pre>
+
+          FrontEnd:
+          <pre class="code code--block">
+            <code>
+              1. Install <a class="link link--light" href="https://nodejs.org/en/">NPM</a>
+              2. Install angular CLI, CMD command: <b>npm install -g @angular/cli</b>
+              3. Into %your_folder%/myDB/Front, install all dependencies, CMD command: <b>npm install</b>
+              4. Into %your_folder%/myDB/Front, run the project, CMD command: <b>npm run start</b>
+            </code>
+          </pre>
+
+          Redis:
+          <pre class="code code--block">
+            <code>
+              1. Download <a class="link link--light" href="https://github.com/microsoftarchive/redis/releases/download/win-3.0.504/Redisx64-3.0.504.zip">Redis Portable</a>
+              2. Run file <b>redis-server.exe</b> from download (Other installations need to use default configs instance: localhost:6379)
+              3. Accept Adm privileges
+            </code>
+          </pre>
+
+          <p>Obs. Clean all caches (control + F5) on system first start when get errors.</p>
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Linux/Mac Configuration</h3>
+        <div class="code__block code__block--notabs">
+          <p>MyDB instructions build&run for Linux and Mac: </p>
+
+          Backend:
+          <pre class="code code--block">
+              <code>
+                1. Install <a class="link link--light" href="https://dotnet.microsoft.com/download/dotnet/3.1">.Net Core 3.1 SDK</a> binaries
+                2. Trust on .net certs, CMD command: <b>sudo dotnet dev-certs https –trust</b>
+                3. Into %your_folder%/myDB/API run the project, CMD command: <b>dotnet run --project Presentation/MyDB.csproj</b>
+
+                Obs. .Net core download page show how to install SDK, ex:
+
+                mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.408-linux-x64.tar.gz -C $HOME/dotnet
+                export DOTNET_ROOT=$HOME/dotnet
+                export PATH=$PATH:$HOME/dotnet
+              </code>
+            </pre>
+
+          FrontEnd:
+          <pre class="code code--block">
+            <code>
+              1. Install <a class="link link--light" href="https://www.npmjs.com/get-npm">NPM</a>
+              2. Install angular CLI, CMD command: <b>sudo npm install -g @angular/cli</b>
+              3. Into %your_folder%/myDB/Front, install all dependencies, CMD command: <b>sudo npm install</b>
+              4. Into %your_folder%/myDB/Front, run the project, CMD command: <b>npm run start</b>
+            </code>
+          </pre>
+
+          Redis:
+          <pre class="code code--block">
+            <code>
+              1. Download <a class="link link--light" href="http://download.redis.io/redis-stable.tar.gz">Redis</a> (Other installations need to use default configs instance: localhost:6379)
+              2. Extract File, command: <b>tar xvzf redis-stable.tar.gz</b>
+              3. Into %your_folder%/redis-stable make Redis project, command: <b>Make</b>
+              4. Into %your_folder%/redis-stable, run redis server, command: <b>./src/redis-server</b>
+            </code>
+          </pre>
+
+          <p>Obs. Clean all caches (control + F5) on system first start when get errors.</p>
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Tests</h3>
+        <div class="code__block code__block--notabs">
+          <p>- To run tests, into %your_folder%/myDB/API run CMD command:</p>
+
+          <pre class="code code--block">
+                <code>
+                  dotnet test /p:CollectCoverage=true
+                </code>
+              </pre>
+
+          Results:
+          <div>
+            <p>Tests output:</p>
+            <img src="Docs//Lib/Images/exampleTests.PNG">
+          </div>
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Angular Services</h3>
+        DatabaseService:
+        <pre class="code code--block">
+            <code>
+              // Create new full database using Dump data
+              createDatabaseByDump(database: Database): Observable&lt;Database&gt;	
+              
+              // Create new empty database
+              createDatabase(dbName: string): Observable&lt;Database&gt;	
+
+              // Delete Database by Id
+              deleteDatabase(dbId: string): Observable&lt;string[]&gt;
+
+              // Get Dump by Id
+              getDump(dbId: string): Observable&lt;Database&gt;
+
+              // Get full database, with resolved references
+              getDatabase(dbId: string): Observable&lt;Database&gt;
+
+              // Get all Ids db from memory
+              getListDatabases(): Observable&lt;string[]&gt;
+            </code>
+          </pre>
+
+        TableService:
+        <pre class="code code--block">
+            <code>
+              // Create new full table using Dump data
+              createTableByDump(databaseId: string, table: Table): Observable&lt;Table&gt;
+              
+              // Create new empty table
+              createTable(table: tablePayload): Observable&lt;Table&gt;
+
+              // Get full table, with resolved references
+              getTable(tableName: string): Observable&lt;Table&gt;
+
+              // Delete table by Id
+              deleteTable(dbId: string, tableId: string): Observable&lt;Database&gt;
+            </code>
+          </pre>
+
+        EntityService:
+        <pre class="code code--block">
+            <code>
+              // Create a new entity, using dbId + tableId
+              createEntity(entity: entityPayload): Observable&lt;Table&gt;
+          
+              // Delete entity by Id
+              deleteEntity(dbId: string, tableId: string, entitiesId: number[]): Observable&lt;Table&gt;
+            </code>
+          </pre>
+
+        Functions Interfaces:
+        <pre class="code code--block">
+          <code>
+            export interface Database{
+              &nbsp;	id: string;
+              &nbsp;	name: string;
+              &nbsp;	tables: Table[]
+            }  
+
+            export interface Table {
+              &nbsp;	id: string;
+              &nbsp;	name: string;
+              &nbsp;	displayedColumns: string[];
+              &nbsp;	attributes: tableAttribute[];
+              &nbsp;	entities: any[];
+              &nbsp;	openState: boolean
+            }
+
+            export interface tablePayload {
+              &nbsp;	databaseKey: string;
+              &nbsp;	tableName: string;
+              &nbsp;	attributes: tableAttributePayload[];
+            }
+
+            export interface entityPayload {
+              &nbsp;	databaseKey: string;
+              &nbsp;	tableKey: string;
+              &nbsp;	entity: any;
+            }
+          </code>
+        </pre>
+
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">APIs Endpoints</h3>
+        <div class="code__block code__block--notabs">
+          <p>Open <a class="link link--light" href="https://localhost:5001/swagger/index.html">Swagger</a> for more
+            details</p>
+
+          Create:
+          <pre class="code code--block">
+              <code>
+                {GET}  &nbsp;/Database/Create/db
+                {POST}       /Database/Create/table
+                {POST}       /Database/Create/entity
+              </code>
+            </pre>
+
+          Query:
+          <pre class="code code--block">
+            <code>
+              {GET} /Database/Query/listDBs
+              {GET} /Database/Query/dump
+              {GET} /Database/Query/fullDb
+              {GET} /Database/Query/fullTable
+            </code>
+          </pre>
+
+          Delete:
+          <pre class="code code--block">
+            <code>
+              {{DELETE}}             /Database/Delete/db
+              {{DELETE}}             /Database/Delete/table
+              {{POST}}   &nbsp;&nbsp;/Database/Delete/entity/{dbId}/{tableId}
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Functionalities</h3>
+        <div class="code__block code__block--notabs">
+          <p>To use all functionaties, open <a class="link link--light" href="http://localhost:4200/">myDB</a></p>
+
+          <div class="functionalities-images">
+            Base System
+            <p>Starter page application will provide multiples functionalities</p>
+            <img src="Docs//Lib/Images/FullSystem.PNG">
+          </div>
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Create Functionalities</h3>
+        <div class="code__block code__block--notabs">
+
+          <div class="functionalities-images">
+            Add Sample Database
+            <p>User this header button to create a sample database with pre defined values</p>
+            <img src="Docs//Lib/Images/AddSample.PNG">
+          </div>
+
+          <div class="functionalities-images">
+            Create Database
+            <p>Use + buttom on botton right page to create a new Database.</p>
+            <img src="Docs//Lib/Images/CreateDatabase.png">
+          </div>
+
+          <div class="functionalities-images">
+            Create Table
+            <p>Create table will provide a dynamic configuration to all attributes</p>
+            <img src="Docs//Lib/Images/CreateTable.PNG">
+          </div>
+
+          <div class="functionalities-images">
+            Create Entity
+            <p>Create entity provides a dynamic form using table selected attributes</p>
+            <img src="Docs//Lib/Images/CreateEntity.PNG">
+          </div>
+
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Dump Functionalities</h3>
+        <div class="code__block code__block--notabs">
+          <p>To use all functionaties, open <a class="link link--light" href="http://localhost:4200/">myDB</a></p>
+
+          <div class="functionalities-images">
+            Dump
+            <p>Dump will provide a view Json from Database, with possibility to export all data</p>
+            <img src="Docs//Lib/Images/Dump.PNG">
+          </div>
+
+          <div class="functionalities-images">
+            Denormalize
+            <p>Denormalize will provide a view Json from Database, with resolved references and possibility to export
+              all data</p>
+            <img src="Docs//Lib/Images/Denormalize.PNG">
+          </div>
+        </div>
+      </section>
+
+      <section class="js-section">
+        <h3 class="section__title">Delete Functionalities</h3>
+        <div class="code__block code__block--notabs">
+          <p>To use all functionaties, open <a class="link link--light" href="http://localhost:4200/">myDB</a></p>
+
+          <div class="functionalities-images">
+            Delete Database
+            <p>Button on right top side provide a simple way to delete databases</p>
+            <img src="Docs//Lib/Images/DeleteDatabase.PNG">
+          </div>
+
+          <div class="functionalities-images">
+            Delete Table
+            <p>Delete table based on selected by user</p>
+            <img src="Docs//Lib/Images/DeleteTable.PNG">
+          </div>
+
+          <div class="functionalities-images">
+            Delete Entity
+            <p>Provide a multiple selectable list, based on selected table. Delete multiples lines at time</p>
+            <img src="Docs//Lib/Images/DeleteEntity.PNG">
+          </div>
+
+      </section>
+    </article>
+  </div>
+
+  <footer class="footer">MyDB</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="Docs//Lib/scribbler.js"></script>
+</body>
+
+</html>

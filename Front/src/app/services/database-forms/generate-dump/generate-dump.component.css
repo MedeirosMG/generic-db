@@ -1,0 +1,8 @@
+.mat-divider{
+    padding: 15px;
+}
+
+::ng-deep .mat-tab-body-wrapper{
+    min-height: 20em;
+    padding: 2em;
+}

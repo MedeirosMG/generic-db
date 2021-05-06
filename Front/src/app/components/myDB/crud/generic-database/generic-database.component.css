@@ -1,0 +1,29 @@
+.header-database{
+    padding: 15px;
+    color: #7e57c2;
+    font-size: 35px;
+  }
+  
+  .mat-elevation-z7{
+      margin-top: 50px !important
+    }
+    
+    .mat-elevation-z7{
+      margin: auto;
+      width: 80%;
+    }
+  
+    .buttonsArea{
+      padding: 20px;
+    }
+  
+    .buttons:not(:first-child){
+      margin-left: 20px;
+    }
+    
+    .mat-icon{
+      float: right;
+      cursor: pointer;
+      color: #543b6c;
+      font-size: .8em;
+    }

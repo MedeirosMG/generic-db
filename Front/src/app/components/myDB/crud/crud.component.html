@@ -1,0 +1,18 @@
+<mat-toolbar class="navbar">
+    <mat-icon>dashboard</mat-icon>
+    <span>My DB</span>
+    <button mat-button (click)="sampleDb()" class="sample-button">Add Sample DB</button>
+</mat-toolbar>
+
+
+<div class="addDatabase">
+    <button (click)="createDatabase()" mat-fab color="primary" aria-label="Create new database">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<div>
+    <app-loader-screen></app-loader-screen>
+    <app-generic-database *ngFor="let item of databasesObject; let i = index" [database]="item"
+        (delete)="reloadDBs($event)"></app-generic-database>
+</div>

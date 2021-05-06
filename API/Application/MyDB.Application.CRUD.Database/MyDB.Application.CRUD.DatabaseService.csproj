@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MyDB.Domain.CRUD\MyDB.Domain.CRUD.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MyDB.Infrastructure.Cache\MyDB.Infrastructure.Cache.csproj" />
+  </ItemGroup>
+
+</Project>

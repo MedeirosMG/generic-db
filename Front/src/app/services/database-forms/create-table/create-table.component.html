@@ -1,0 +1,94 @@
+<h1 mat-dialog-title>
+    <mat-form-field>
+        <input [(ngModel)]="tableName" matInput>
+    </mat-form-field>
+</h1>
+
+<div mat-dialog-content>
+    <mat-form-field class="formFields" appearance="fill">
+        <mat-label>Attribute name</mat-label>
+        <input [(ngModel)]="nameAttribute" matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Attribute type</mat-label>
+        <mat-select [disabled]="!pkDefined() || functionAttribute=='REFERENCE'" [(ngModel)]="typeAttribute">
+            <mat-option *ngFor="let attributeType of attributesType" [value]="attributeType.value">
+                {{attributeType.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-radio-group [(ngModel)]="functionAttribute">
+        <mat-radio-button class="margin-radio" color="primary" [disabled]="pkDefined()" value="PK" (click)="typeSelected('PK')">PK</mat-radio-button>
+        <mat-radio-button class="margin-radio" color="primary" [disabled]="!pkDefined()" value="REFERENCE" (click)="typeSelected('REFERENCE')">Reference
+        </mat-radio-button>
+        <mat-radio-button class="margin-radio" color="primary" [disabled]="!pkDefined()" value="OTHER" (click)="typeSelected('OTHER')">Other
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <button (click)="addAttribute()" mat-mini-fab color="primary">
+        <mat-icon>add</mat-icon>
+    </button>
+
+    <p *ngIf="formError" class="validationError">
+        {{formError}}
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile [rowspan]="1">
+            <mat-selection-list class="w-100 lieuList" #attr [multiple]="false">
+                <mat-list-option *ngFor="let attribute of attributes" (click)="selectList(attribute)"
+                    [value]="attribute">
+                    <span>
+                        <a class="text-item">{{attribute.name}}</a>
+                        <mat-icon *ngIf="attribute.function == 'PK'" class="mat-icon-item"> vpn_key</mat-icon>
+                        <mat-icon *ngIf="attribute.function == 'REFERENCE'" class="mat-icon-item">link</mat-icon>
+                    </span>
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-grid-tile>
+        <mat-grid-tile class="mi-tile-contents-top">
+            <table mat-table [dataSource]="selectedList" class="w-100">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="function">
+                    <th mat-header-cell *matHeaderCellDef> Function </th>
+                    <td mat-cell *matCellDef="let element"> {{element.function}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <button class="button-delete" (click)="deleteCurrente()" mat-mini-fab color="primary">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
+<div mat-dialog-actions align="end">
+    <button (click)="close()" mat-button>Cancel</button>
+    <button (click)="createTable()" mat-button>Create</button>
+</div>

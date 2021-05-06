@@ -1,0 +1,11 @@
+<h3 mat-dialog-title>Create Database</h3>
+<div class="example-container" mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Database name</mat-label>
+        <input [(ngModel)]="dbName" matInput>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-button (click)="create()">Create</button>
+</div>

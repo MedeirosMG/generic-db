@@ -1,0 +1,109 @@
+{
+    "id": "e0d66c9a-577e-4aab-bb13-918c5367ca0f",
+    "name": "My Database",
+    "tables": [
+        {
+            "id": "03938773-34c5-472f-a874-5f8530c5dcb6",
+            "name": "Customers",
+            "attributes": [
+                {
+                    "primaryKey": true,
+                    "referenceAttribute": false,
+                    "name": "Entity ID",
+                    "type": "number"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": false,
+                    "name": "Birthdate",
+                    "type": "string"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": false,
+                    "name": "CPF",
+                    "type": "string"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": false,
+                    "name": "e-mail",
+                    "type": "string"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": false,
+                    "name": "Name",
+                    "type": "string"
+                }
+            ],
+            "entities": [
+                {
+                    "Entity ID": 1,
+                    "Birthdate": "15/12/1987",
+                    "CPF": "234.528.218-70",
+                    "e-mail": "joao.silva@email.com",
+                    "Name": "João da Silva e Silva"
+                },
+                {
+                    "Entity ID": 2,
+                    "Birthdate": "18/01/1962",
+                    "CPF": "682.245.830-22",
+                    "e-mail": "maria.goncalves@email.com",
+                    "Name": "Maria Gonçalves Oliveira"
+                },
+                {
+                    "Entity ID": 3,
+                    "Birthdate": "20/03/1989",
+                    "CPF": "207.772.923-16",
+                    "e-mail": "janaina.araujo@email.com",
+                    "Name": "Janaira Araújo dos Santos"
+                }
+            ]
+        },
+        {
+            "id": "2fdd2138-1e8b-4e0c-baf4-02fa85b89c61",
+            "name": "Account",
+            "attributes": [
+                {
+                    "primaryKey": true,
+                    "referenceAttribute": false,
+                    "name": "Entity ID",
+                    "type": "number"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": true,
+                    "name": "CPF",
+                    "type": "string"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": false,
+                    "name": "Balance",
+                    "type": "number"
+                },
+                {
+                    "primaryKey": false,
+                    "referenceAttribute": false,
+                    "name": "Status",
+                    "type": "string"
+                }
+            ],
+            "entities": [
+                {
+                    "Entity ID": 1,
+                    "CPF": "03938773-34c5-472f-a874-5f8530c5dcb6.1.CPF",
+                    "Balance": "633400",
+                    "Status": "ACCOUNT_STATUS_ACTIVE"
+                },
+                {
+                    "Entity ID": 2,
+                    "CPF": "03938773-34c5-472f-a874-5f8530c5dcb6.3.CPF",
+                    "Balance": "-2357000",
+                    "Status": "ACCOUNT_STATUS_BLOCKED"
+                }
+            ]
+        }
+    ]
+}

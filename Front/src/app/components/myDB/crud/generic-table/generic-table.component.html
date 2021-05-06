@@ -1,0 +1,30 @@
+<mat-accordion *ngFor="let table of tables; let i = index">
+  <mat-expansion-panel [expanded]="table.openState" (opened)="table.openState = true"
+    (closed)="table.openState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{table.name}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table mat-table [dataSource]="table.entities" class="mat-elevation-z1">
+
+      <!-- Position Column -->
+      <ng-container *ngFor="let subitem of getProperties(table.entities[0]); let i = index" [matColumnDef]="subitem">
+        <th mat-header-cell *matHeaderCellDef>{{subitem}}</th>
+        <td mat-cell *matCellDef="let element">
+
+          <div *ngIf="isReference(table.attributes, subitem);else elseBlock">
+            <a class="link">
+              <mat-icon>link</mat-icon>
+              <span>{{element[subitem]}}</span>
+            </a>
+          </div>
+          <ng-template #elseBlock>{{element[subitem]}}</ng-template>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="table.displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: table.displayedColumns;"></tr>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,47 @@
+[
+  {
+    "key": "DATABASE",
+    "type": "listDB",
+    "value": "[\"2e04ca2d-1762-4675-9850-01480d843f48\",\"ce458382-6d85-4e04-8564-6215bea0b863\",\"d3f3cf47-27fa-4f5c-b236-d01481e7f5f2\",\"837fc16d-405e-4f63-920c-8542c3f5daa1\",\"6f297c81-2847-49c3-87ea-ca451c185dfa\", \"2332f472-5cd5-4813-86d4-8e0205e5cdd9\"]"
+  },
+  {
+    "key": "2e04ca2d-1762-4675-9850-01480d843f48", // Funcional Database
+    "type": "database",
+    "value": "{\"id\":\"2e04ca2d-1762-4675-9850-01480d843f48\",\"name\":\"My Database\",\"tables\":[],\"tablesId\":[\"92b5e6f6-98e5-4983-be91-e53afb5e4b41\",\"a99ad182-fadd-4ab5-90b2-66fb67983121\"]}"
+  },
+  {
+    "key": "ce458382-6d85-4e04-8564-6215bea0b863", // Database with tables error
+    "type": "database",
+    "value": "{\"id\":\"ce458382-6d85-4e04-8564-6215bea0b863\",\"name\":\"My Database\",\"tables\":[],\"tablesId\":[\"12a059cb-fdba-4f9a-ba54-6a9f53d00c4e\",\"d9459c16-b013-432f-a671-9e7db2405973\"]}"
+  },
+  {
+    "key": "6f297c81-2847-49c3-87ea-ca451c185dfa", // Database With Table using invalid reference format
+    "type": "database",
+    "value": "{\"id\":\"6f297c81-2847-49c3-87ea-ca451c185dfa\",\"name\":\"My Database\",\"tables\":[],\"tablesId\":[\"70dccdbc-9d8e-4d0f-9839-39a66b406351\"]}"
+  },
+  {
+    "key": "2332f472-5cd5-4813-86d4-8e0205e5cdd9", // Database With Table using not found reference
+    "type": "database",
+    "value": "{\"id\":\"2332f472-5cd5-4813-86d4-8e0205e5cdd9\",\"name\":\"My Database\",\"tables\":[],\"tablesId\":[\"3f3ea955-e08e-48b0-8131-bcad0c776412\"]}"
+  },
+  {
+    "key": "92b5e6f6-98e5-4983-be91-e53afb5e4b41", // Valid Table
+    "type": "table",
+    "value": "{\"id\":\"92b5e6f6-98e5-4983-be91-e53afb5e4b41\",\"name\":\"Account\",\"attributes\":[{\"id\":\"d0326e9b-51d9-468e-bb6d-794e8dec7c7e\",\"referenceAttribute\":false,\"name\":\"Entity ID\",\"type\":\"number\",\"primaryKey\":true},{\"id\":\"9fb088aa-0a8e-4a28-b0a0-049094169174\",\"referenceAttribute\":true,\"name\":\"CPF\",\"type\":\"string\",\"primaryKey\":false},{\"id\":\"2b0d7286-2800-4c20-a101-ad786e0680c8\",\"referenceAttribute\":false,\"name\":\"Balance\",\"type\":\"number\",\"primaryKey\":false},{\"id\":\"bff6dd96-28ac-4a65-800f-da3cfe7e5a37\",\"referenceAttribute\":false,\"name\":\"Status\",\"type\":\"string\",\"primaryKey\":false}],\"entities\":[{\"Entity ID\":1,\"CPF\":\"a99ad182-fadd-4ab5-90b2-66fb67983121.3.CPF\",\"Balance\":\"633400\",\"Status\":\"ACCOUNT_STATUS_ACTIVE\"},{\"Entity ID\":2,\"CPF\":\"a99ad182-fadd-4ab5-90b2-66fb67983121.1.CPF\",\"Balance\":\"-2357000\",\"Status\":\"ACCOUNT_STATUS_BLOCKED\"}]}"
+  },
+  {
+    "key": "a99ad182-fadd-4ab5-90b2-66fb67983121", // Valid Table
+    "type": "table",
+    "value": "{\"id\":\"a99ad182-fadd-4ab5-90b2-66fb67983121\",\"name\":\"Customers\",\"attributes\":[{\"id\":\"e432806d-bc01-430e-b973-034d6228e87f\",\"referenceAttribute\":false,\"name\":\"Entity ID\",\"type\":\"number\",\"primaryKey\":true},{\"id\":\"2568732f-e48c-40c3-a616-a81f8571b2a2\",\"referenceAttribute\":false,\"name\":\"Birthdate\",\"type\":\"string\",\"primaryKey\":false},{\"id\":\"ac93b94e-ab47-4dbf-865d-ca9499482869\",\"referenceAttribute\":false,\"name\":\"CPF\",\"type\":\"string\",\"primaryKey\":false},{\"id\":\"6d9688a1-1a3c-42b5-8ebd-1475c7410817\",\"referenceAttribute\":false,\"name\":\"e-mail\",\"type\":\"string\",\"primaryKey\":false},{\"id\":\"10c51304-51e6-49f6-90c1-97d14433f071\",\"referenceAttribute\":false,\"name\":\"Name\",\"type\":\"string\",\"primaryKey\":false}],\"entities\":[{\"Entity ID\":1,\"Birthdate\":\"15/12/1987\",\"CPF\":\"234.528.218-70\",\"e-mail\":\"joao.silva@email.com\",\"Name\":\"Jo\\u00E3o da Silva e Silva\"},{\"Entity ID\":2,\"Birthdate\":\"18/01/1962\",\"CPF\":\"682.245.830-22\",\"e-mail\":\"maria.goncalves@email.com\",\"Name\":\"Maria Gon\\u00E7alves Oliveira\"},{\"Entity ID\":3,\"Birthdate\":\"20/03/1989\",\"CPF\":\"207.772.923-16\",\"e-mail\":\"janaina.araujo@email.com\",\"Name\":\"Janaira Ara\\u00FAjo dos Santos\"}]}"
+  },
+  {
+    "key": "70dccdbc-9d8e-4d0f-9839-39a66b406351", // Table With reference invalid format
+    "type": "table",
+    "value": "{\"id\":\"70dccdbc-9d8e-4d0f-9839-39a66b406351\",\"name\":\"Account\",\"attributes\":[{\"id\":\"d0326e9b-51d9-468e-bb6d-794e8dec7c7e\",\"referenceAttribute\":false,\"name\":\"Entity ID\",\"type\":\"number\",\"primaryKey\":true},{\"id\":\"9fb088aa-0a8e-4a28-b0a0-049094169174\",\"referenceAttribute\":true,\"name\":\"CPF\",\"type\":\"string\",\"primaryKey\":false},{\"id\":\"2b0d7286-2800-4c20-a101-ad786e0680c8\",\"referenceAttribute\":false,\"name\":\"Balance\",\"type\":\"number\",\"primaryKey\":false},{\"id\":\"bff6dd96-28ac-4a65-800f-da3cfe7e5a37\",\"referenceAttribute\":false,\"name\":\"Status\",\"type\":\"string\",\"primaryKey\":false}],\"entities\":[{\"Entity ID\":1,\"CPF\":\"a99ad182-fadd-4ab5-90b2-66fb67983121\",\"Balance\":\"633400\",\"Status\":\"ACCOUNT_STATUS_ACTIVE\"},{\"Entity ID\":2,\"CPF\":\"a99ad182-fadd-4ab5-90b2-66fb67983121.1.CPF\",\"Balance\":\"-2357000\",\"Status\":\"ACCOUNT_STATUS_BLOCKED\"}]}"
+  },
+  {
+    "key": "3f3ea955-e08e-48b0-8131-bcad0c776412", // Table With reference not found
+    "type": "table",
+    "value": "{\"id\":\"3f3ea955-e08e-48b0-8131-bcad0c776412\",\"name\":\"Account\",\"attributes\":[{\"id\":\"d0326e9b-51d9-468e-bb6d-794e8dec7c7e\",\"referenceAttribute\":false,\"name\":\"Entity ID\",\"type\":\"number\",\"primaryKey\":true},{\"id\":\"9fb088aa-0a8e-4a28-b0a0-049094169174\",\"referenceAttribute\":true,\"name\":\"CPF\",\"type\":\"string\",\"primaryKey\":false},{\"id\":\"2b0d7286-2800-4c20-a101-ad786e0680c8\",\"referenceAttribute\":false,\"name\":\"Balance\",\"type\":\"number\",\"primaryKey\":false},{\"id\":\"bff6dd96-28ac-4a65-800f-da3cfe7e5a37\",\"referenceAttribute\":false,\"name\":\"Status\",\"type\":\"string\",\"primaryKey\":false}],\"entities\":[{\"Entity ID\":1,\"CPF\":\"a99ad182-fadd-4ab5-90b2-66fb67983121.3.TESTE\",\"Balance\":\"633400\",\"Status\":\"ACCOUNT_STATUS_ACTIVE\"},{\"Entity ID\":2,\"CPF\":\"a99ad182-fadd-4ab5-90b2-66fb67983121.1.CPF\",\"Balance\":\"-2357000\",\"Status\":\"ACCOUNT_STATUS_BLOCKED\"}]}"
+  }
+]

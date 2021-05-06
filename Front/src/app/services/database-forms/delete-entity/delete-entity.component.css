@@ -1,0 +1,12 @@
+span:not(.sticky) { /* can use another selector, just wanted it to be exceptionally clear what i was referring to here */
+    display: inline-block; /* so height and width actually take affect */
+    max-width: 80%;
+    height: 1em; /* so overflow hidden works and keeps text on one row */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* important to show ellipsis, or words will just be broken off */
+}
+span.sticky {
+    display: inline-block;
+    width: 20%;
+}

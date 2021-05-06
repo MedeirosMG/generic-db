@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>Delete Table</h3>
+<div class="example-container" mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Table</mat-label>
+        <mat-select (selectionChange)="selectTable($event)">
+            <mat-option *ngFor="let table of tables" [value]="table.id">
+                {{table.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-button (click)="delete()">Delete</button>
+</div>

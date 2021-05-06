@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+
+    <mat-tab-group (selectedTabChange)="setTypeGenerator($event)" mat-align-tabs="start">
+        <mat-tab label="Dump">
+            <ngx-json-viewer [json]="database" [expanded]="false"></ngx-json-viewer>
+        </mat-tab>
+        <mat-tab label="Denormalize">
+            <ngx-json-viewer [json]="database" [expanded]="false"></ngx-json-viewer>
+        </mat-tab>
+      </mat-tab-group>
+    <mat-divider></mat-divider>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Cancel</button>    
+    <button mat-button (click)="generateDownload()">Export</button>
+</div>

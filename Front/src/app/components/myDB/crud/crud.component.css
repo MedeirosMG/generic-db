@@ -1,0 +1,21 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .navbar{
+    color: #7e57c2;
+  }
+
+  fa-icon{
+    margin-right: 20px;
+  }
+
+  .addDatabase{    
+    position: fixed;
+    bottom:40px;
+    right:40px;
+  }
+
+  .sample-button{
+    margin-left: 30px;
+  }

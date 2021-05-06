@@ -1,0 +1,66 @@
+.mat-form-field:not(:first-child){
+    margin-left: 10px;
+}
+
+.mat-checkbox{
+    margin-left: 10px;
+}
+
+.mat-radio-group{
+    margin-left: 10px;
+}
+
+.selectableList{
+    width: 50%;
+}
+
+.fieldsInformation{
+    width: 50%;
+}
+
+.w-100{
+    width: 100%;
+    height: 100%;
+}
+
+.margin-radio{
+    margin: 0 10px;
+    padding-right: 20px;
+}
+
+.lieuList {
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .validationError{
+      color: red;
+  }
+
+  table.table-config{
+      width: 100%;
+      height: 100%;
+  }
+
+  ::ng-deep .mat-figure{
+      align-items: initial !important;
+  }
+
+  .mat-divider{
+      padding: 5px;
+  }
+
+  .button-delete{
+      top: 50%;
+      right: 10%;
+  }
+
+  .text-item{
+      font-size: 20px;
+      margin-left: .3em;
+  }
+
+  .mat-icon-item{
+      float: left;
+      color: #7e57c2;
+  }
